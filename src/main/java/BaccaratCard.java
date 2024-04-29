@@ -4,17 +4,15 @@ public class BaccaratCard extends Card {
         super(r, s);
     }
 
+    // this one is complete
     @Override
     public int value() {
         // Baccarat card value calculation
-//        int value = getRank().ordinal(); // Rank value starts from 0, so add 1
-//        return Math.min(value, 10); // Limit the maximum value to 10
-        return super.value();
-    }
-
-
-    @Override
-    public String toString() {
-        return super.toString();
+        int rankValue = super.value();
+        if (rankValue >= 10) {
+            return 0; // Face cards and 10 have a value of 0 in Baccarat
+        } else {
+            return rankValue;
+        }
     }
 }

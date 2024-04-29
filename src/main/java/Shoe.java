@@ -1,25 +1,21 @@
 // TODO: Implement the Shoe class in this file
 
-import java.util.ArrayList;
 import java.util.Collections;
-import java.util.List;
 
-public class Shoe {
-    private List<BaccaratCard> cards;
-
+public class Shoe extends CardCollection{
     public Shoe(int decks) {
-        this.cards = new ArrayList<>();
+        super();
+        if (decks != 6 && decks != 8) {
+            throw new CardException("Invalid number of decks. Only 6 or 8 decks are allowed.");
+        }
+        
         for (int i = 0; i < decks; i++) {
             for (Card.Suit suit : Card.Suit.values()) {
                 for (Card.Rank rank : Card.Rank.values()) {
-                    this.cards.add(new BaccaratCard(rank, suit));
+                    super.add(new BaccaratCard(rank, suit));
                 }
             }
         }
-    }
-
-    public int size() {
-        return cards.size();
     }
 
     public void shuffle() {
@@ -27,10 +23,9 @@ public class Shoe {
     }
 
     public BaccaratCard deal() {
-        if (cards.isEmpty()) {
-            // Handle if the shoe is empty
-            return null;
+        if (super.isEmpty()) {
+            throw new CardException("The shoe is empty. Cannot deal a card.");
         }
-        return cards.remove(0);
+        return (BaccaratCard) cards.remove(0);
     }
 }

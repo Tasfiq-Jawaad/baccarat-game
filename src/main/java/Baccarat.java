@@ -8,8 +8,7 @@ public class Baccarat {
     BaccaratHand bankerHand = new BaccaratHand();
     BaccaratHand playerHand = new BaccaratHand();
 
-    // Deal a card to the player
-    // Deal two cards to each hand
+    // Deal two cards to the player and the banker
     for (int i = 0; i < 2; i++) {
       playerHand.add(shoe.deal());
       bankerHand.add(shoe.deal());
@@ -18,7 +17,7 @@ public class Baccarat {
     System.out.println("Player: " + playerHand + " = " + playerHand.value());
     System.out.println("banker: " + bankerHand + " = " + bankerHand.value());
 
-    // checlk if either hand is a natural
+    // check if either hand is a natural
     if (playerHand.isNatural() && bankerHand.isNatural()) {
       System.out.println("Both Player and Banker has a natural\n");
     } else if (playerHand.isNatural()) {

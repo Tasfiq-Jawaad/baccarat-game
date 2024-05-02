@@ -1,5 +1,3 @@
-// TODO: Implement the Shoe class in this file
-
 import java.util.Collections;
 
 public class Shoe extends CardCollection{

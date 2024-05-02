@@ -4,10 +4,8 @@ public class BaccaratCard extends Card {
         super(r, s);
     }
 
-    // this one is complete
     @Override
     public int value() {
-        // Baccarat card value calculation
         int rankValue = super.value();
         if (rankValue >= 10) {
             return 0; // Face cards and 10 have a value of 0 in Baccarat

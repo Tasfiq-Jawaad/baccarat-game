@@ -1,6 +1,3 @@
-import java.util.ArrayList;
-import java.util.List;
-
 public class Baccarat {
   public static void main(String[] args) {
     Shoe shoe = new Shoe(6);

@@ -1,6 +1,3 @@
-import java.util.ArrayList;
-import java.util.List;
-
 public class BaccaratHand extends CardCollection {
 
     public BaccaratHand() {
@@ -10,9 +7,9 @@ public class BaccaratHand extends CardCollection {
     public String toString() {
         StringBuilder result = new StringBuilder();
         for (Card card : cards) {
-            result.append(card.toString()).append(" "); // Append a space after each card
+            result.append(card.toString()).append(" ");
         }
-        return result.toString().trim(); // Trim to remove any trailing space
+        return result.toString().trim();
     }
 
     public int value() {

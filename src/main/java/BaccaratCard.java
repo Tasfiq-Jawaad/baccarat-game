@@ -8,7 +8,7 @@ public class BaccaratCard extends Card {
     public int value() {
         int rankValue = super.value();
         if (rankValue >= 10) {
-            return 0; // Face cards and 10 have a value of 0 in Baccarat
+            return 0; 
         } else {
             return rankValue;
         }
